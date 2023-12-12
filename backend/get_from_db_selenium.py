@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from fake_useragent import UserAgent
-from get_from_d2pt import get_db_links, get_all_hero_db_links
+from backend.get_from_d2pt import get_db_links, get_all_hero_db_links
 import random
 import time
 
@@ -89,7 +89,7 @@ def parse():
 
     """Настройки браузера"""
     options = Options()
-    #options.add_argument("--headless")  # Запуск в режиме без запуска окна
+    options.add_argument("--headless")  # Запуск в режиме без запуска окна
     options.add_argument(f"user-agent={UserAgent().random}")  # Имитация рандомного браузера
     global driver
     driver = webdriver.Chrome(options=options)

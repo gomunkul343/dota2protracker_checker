@@ -1,0 +1,7 @@
+flask
+selenium
+requests
+bs4
+lxml
+fake_useragent
+flask_sqlalchemy

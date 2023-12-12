@@ -4,7 +4,7 @@ from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from backend.get_from_d2pt import get_all_heroes
 from multiprocessing import Process
-from backend.get_from_db_selenium import parse  #Заменить на get_from_db_selenium, если банит (спустя ~сутки все матчи будут добавляться)
+from backend.get_from_db_request import parse  #Заменить на get_from_db_selenium, если банит (спустя ~сутки все матчи будут добавляться)
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///replays.db"
@@ -112,4 +112,4 @@ def articles_filter(articles, heroes):
 if __name__ == "__main__":
     parser_process = Process(target=run_parser)
     parser_process.start()
-    app.run()
+    app.run(host="0.0.0.0")

@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-from get_from_d2pt import get_db_links, get_browser_headers, get_all_hero_db_links
+from backend.get_from_d2pt import get_db_links, get_browser_headers, get_all_hero_db_links
 import random
 import time
 import requests
@@ -75,7 +75,7 @@ def human_imitation_1():
 
 
 def parse():
-    db_links = get_all_hero_db_links()
+    db_links = get_db_links()
     print(len(db_links))
     match_id = set()
     missed_links = set()
