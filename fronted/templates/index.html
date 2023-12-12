@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dota2protrackerchecker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32">
+            <use xlink:href="#bootstrap"></use>
+        </svg>
+        <span class="fs-4">Find Matchup</span>
+    </a>
+
+    <ul class="nav nav-pills">
+        <li class="nav-item"><a href="https://dota2protracker.com/" class="nav-link" aria-current="page">d2pt</a></li>
+        <li class="nav-item"><a href="https://www.dotabuff.com" class="nav-link">dotabuff</a></li>
+    </ul>
+</header>
+
+<body>
+<form id="heroForm" method="post" action="/matchup">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-2">
+                <label for="hero1">Hero 1:</label>
+                <select name="hero1" id="hero1" class="form-control select-hero" style="width: 100%;">
+                    <option value="" selected disabled>Выберите героя</option>
+                    {% for hero in heroes %}
+                    <option value="{{ hero }}">{{ hero }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label for="hero2">Hero 2:</label>
+                <select name="hero2" id="hero2" class="form-control select-hero" style="width: 100%;">
+                    <option value="" selected disabled>Выберите героя</option>
+                    {% for hero in heroes %}
+                    <option value="{{ hero }}">{{ hero }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label for="hero3">Hero 3:</label>
+                <select name="hero3" id="hero3" class="form-control select-hero" style="width: 100%;">
+                    <option value="" selected disabled>Выберите героя</option>
+                    {% for hero in heroes %}
+                    <option value="{{ hero }}">{{ hero }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label for="hero4">Hero 4:</label>
+                <select name="hero4" id="hero4" class="form-control select-hero" style="width: 100%;">
+                    <option value="" selected disabled>Выберите героя</option>
+                    {% for hero in heroes %}
+                    <option value="{{ hero }}">{{ hero }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label for="hero5">Hero 5:</label>
+                <select name="hero5" id="hero5" class="form-control select-hero" style="width: 100%;">
+                    <option value="" selected disabled>Выберите героя</option>
+                    {% for hero in heroes %}
+                    <option value="{{ hero }}">{{ hero }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-2">
+                <label for="hero1">Hero 1:</label>
+                <select name="hero6" id="hero6" class="form-control select-hero" style="width: 100%;">
+                    <option value="" selected disabled>Выберите героя</option>
+                    {% for hero in heroes %}
+                    <option value="{{ hero }}">{{ hero }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label for="hero2">Hero 2:</label>
+                <select name="hero7" id="hero7" class="form-control select-hero" style="width: 100%;">
+                    <option value="" selected disabled>Выберите героя</option>
+                    {% for hero in heroes %}
+                    <option value="{{ hero }}">{{ hero }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label for="hero3">Hero 3:</label>
+                <select name="hero8" id="hero8" class="form-control select-hero" style="width: 100%;">
+                    <option value="" selected disabled>Выберите героя</option>
+                    {% for hero in heroes %}
+                    <option value="{{ hero }}">{{ hero }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label for="hero4">Hero 4:</label>
+                <select name="hero9" id="hero9" class="form-control select-hero" style="width: 100%;">
+                    <option value="" selected disabled>Выберите героя</option>
+                    {% for hero in heroes %}
+                    <option value="{{ hero }}">{{ hero }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label for="hero5">Hero 5:</label>
+                <select name="hero10" id="hero10" class="form-control select-hero" style="width: 100%;">
+                    <option value="" selected disabled>Выберите героя</option>
+                    {% for hero in heroes %}
+                    <option value="{{ hero }}">{{ hero }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <button type="submit" id="submitButton" class="btn btn-primary" style="margin-left: auto; display: block;">
+            Посмотреть матчапы
+        </button>
+    </div>
+</form>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $(".select-hero").on("change", function() {
+            var selectedValues = [];
+            $(".select-hero").each(function() {
+                var value = $(this).val();
+                if (value !== null && value !== "") {
+                    if (selectedValues.includes(value)) {
+                        alert("Двух одинаковых героев не можеть быть в игре!");
+                        $(this).val("").trigger("change.select2");
+                    } else {
+                        selectedValues.push(value);
+                    }
+                }
+            });
+        });
+    });
+
+</script>
+<script>
+  $(document).ready(function() {
+    $(".select-hero").select2({
+      placeholder: "Выберите героя"
+    });
+  });
+</script>
+
+</body>
+</html>
