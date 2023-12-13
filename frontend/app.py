@@ -80,33 +80,24 @@ def articles_filter(articles, heroes):
             filter_2.append(heroes[i])
 
     for article in articles:
-        skip = False
-        for i in filter_1:
-            if not(i in article.radiant_team):
-                skip = True
-                break
-        else:
-            for i in filter_2:
-                if not (i in article.dire_team):
-                    skip = True
-                    break
-        if not skip:
+        if matchup_filtering(article, filter_1, filter_2):
             filtred_articles.append(article)
             continue
-        else:
-            skip = False
-            for i in filter_1:
-                if not (i in article.dire_team):
-                    skip = True
-                    break
-            else:
-                for i in filter_2:
-                    if not (i in article.radiant_team):
-                        skip = True
-                        break
-        if not skip:
+        if matchup_filtering(article, filter_2, filter_1):
             filtred_articles.append(article)
+
     return filtred_articles
+
+
+def matchup_filtering(article, radiant_filter, dire_filter):
+    for hero in radiant_filter:
+        if not (hero in article.radiant_team):
+            return False
+    else:
+        for hero in dire_filter:
+            if not (hero in article.dire_team):
+                return False
+    return True
 
 
 if __name__ == "__main__":
